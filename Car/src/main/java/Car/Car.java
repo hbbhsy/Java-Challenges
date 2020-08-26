@@ -26,14 +26,15 @@ public class Car {
     double mpg = 26.4;
     
     int numberOfPeopleInCar = 1;
+    int maxNumberOfPeopleInCar = 6;
     
     //constructor: Create new instance from the blue print: Car has to match with class name Car
     //add parameter in ()
-    public Car(int customMaxSpeed, double customWeight, boolean customIsTheCarOn) {
-        maxSpeed = customMaxSpeed;
-        weight = customWeight;
-        isTheCarOn = customIsTheCarOn;
-    }
+//    public Car(int customMaxSpeed, double customWeight, boolean customIsTheCarOn) {
+//        maxSpeed = customMaxSpeed;
+//        weight = customWeight;
+//        isTheCarOn = customIsTheCarOn;
+//    }
     
     public void printVariables() {
         System.out.println(maxSpeed);//print this out, the next thing you print out is going to be on another line
@@ -55,11 +56,22 @@ public class Car {
     }
     
     public void getIn() {
-        numberOfPeopleInCar++;
+        if (numberOfPeopleInCar < maxNumberOfPeopleInCar) {
+            numberOfPeopleInCar++;
+            System.out.println("Someone got in");
+        }
+        else {
+            System.out.println("The car is full!");
+        }
     }
     
     public void getOut() {
-        numberOfPeopleInCar--;
+        if (numberOfPeopleInCar > 0){
+            numberOfPeopleInCar--;
+        }
+        else {
+            System.out.println("No one is in the car.");
+        }
     }
     
     public double howManyMiledTillOutOfGas() {
@@ -69,6 +81,16 @@ public class Car {
     public double maxMilesPerFillUp() {
         return maxFuel * mpg;
     }
+    
+    public void turnTheCarOn() {
+        if (isTheCarOn == false) {
+            isTheCarOn = true;
+        } else {
+            System.out.println("The Car is already on " + isTheCarOn);
+        }
+        
+    }
+       
     
     public static void main(String[] args) {
         //Main function is where we make things, use methods, create new objects etc.
@@ -80,21 +102,31 @@ public class Car {
 //        familyCar.upgradeMinSpeed();
 //        familyCar.upgradeMinSpeed();
 //        familyCar.printVariables();
-        Car birthdayPresent = new Car(500, 5000.545, true);
-        System.out.println("Birthday Car v1");
-        birthdayPresent.printVariables();
-        birthdayPresent.getIn();
-        birthdayPresent.getIn();
-        birthdayPresent.getIn();
-        System.out.println("Miles Left:" + birthdayPresent.howManyMiledTillOutOfGas());
-        System.out.println("Miles Left:" + birthdayPresent.maxMilesPerFillUp());
-        System.out.println("Birthday Car v2");
-        birthdayPresent.printVariables();
-        birthdayPresent.getOut();
-        System.out.println("Birthday Car v2");
-        birthdayPresent.printVariables();
-        
-        
+//        Car birthdayPresent = new Car(500, 5000.545, true);
+//        System.out.println("Birthday Car v1");
+//        birthdayPresent.printVariables();
+//        birthdayPresent.getIn();
+//        birthdayPresent.getIn();
+//        birthdayPresent.getIn();
+//        System.out.println("Miles Left:" + birthdayPresent.howManyMiledTillOutOfGas());
+//        System.out.println("Miles Left:" + birthdayPresent.maxMilesPerFillUp());
+//        System.out.println("Birthday Car v2");
+//        birthdayPresent.printVariables();
+//        birthdayPresent.getOut();
+//        System.out.println("Birthday Car v3");
+//        birthdayPresent.printVariables();
+        Car tommyCar = new Car();
+        tommyCar.getOut();
+        tommyCar.getIn();
+        tommyCar.getIn();
+        tommyCar.getIn();
+        tommyCar.getIn();
+        tommyCar.getIn();
+        tommyCar.getIn();
+        tommyCar.getIn();
+        tommyCar.turnTheCarOn();
+        tommyCar.turnTheCarOn();
+                
     }
     
 }
