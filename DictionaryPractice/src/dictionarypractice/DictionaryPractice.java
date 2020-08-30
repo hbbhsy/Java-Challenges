@@ -6,7 +6,7 @@ import java.util.Map;
 public class DictionaryPractice {
 
     public static void main(String[] args) {
-        Map<String, String> dict = new HashMap<String, String>();
+        Map<String, String> dict = new HashMap<>();
         dict.put("Monday", "Lunes");
         dict.put("Tuesday", "Martes");
         dict.put("Wednesday", "Miercoles");
@@ -32,7 +32,7 @@ public class DictionaryPractice {
         System.out.println();
 
         // Shopping List
-        Map<String, Boolean> shoppingList = new HashMap<String, Boolean>();
+        Map<String, Boolean> shoppingList = new HashMap<>();
         // Put some stuff in dictionary
         shoppingList.put("Ham", true);
         shoppingList.put("Bread", Boolean.TRUE);
