@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Car;
 
-/**
- *
- * @author agneshe
- */
+
 public class Car {
     // instant variables
     // property field
@@ -30,11 +22,36 @@ public class Car {
     
     //constructor: Create new instance from the blue print: Car has to match with class name Car
     //add parameter in ()
-//    public Car(int customMaxSpeed, double customWeight, boolean customIsTheCarOn) {
-//        maxSpeed = customMaxSpeed;
-//        weight = customWeight;
-//        isTheCarOn = customIsTheCarOn;
-//    }
+    public Car(int customMaxSpeed, double customWeight, boolean customIsTheCarOn) {
+        maxSpeed = customMaxSpeed;
+        weight = customWeight;
+        isTheCarOn = customIsTheCarOn;
+    }
+    
+    // Getters and Setters
+    
+    public int getMaxSpeed() {
+        return this.maxSpeed;// 'this' equivalent to 'self' in Python
+    }
+    
+    public void setMaxSpeed(int newMaxSpeed) {
+        this.maxSpeed = newMaxSpeed;
+    }
+    
+    public int getMinSpeed() {
+        return this.minSpeed;
+    }
+    
+    
+    
+    public double getWeight() {
+        return this.weight;
+    }
+    
+    public boolean isTheCarOn() {
+        return this.isTheCarOn;
+    }
+    
     
     public void printVariables() {
         System.out.println(maxSpeed);//print this out, the next thing you print out is going to be on another line
@@ -50,9 +67,8 @@ public class Car {
         condition = 'C';
     }
     
-    public void upgradeMinSpeed() {
-        minSpeed = maxSpeed;
-        maxSpeed = maxSpeed + 1;
+    public void upgradeMaxSpeed() {
+        setMaxSpeed(getMaxSpeed() + 10);
     }
     
     public void getIn() {
@@ -94,7 +110,6 @@ public class Car {
     
     public static void main(String[] args) {
         //Main function is where we make things, use methods, create new objects etc.
-        // TODO code application logic here
 //        Car familyCar = new Car();//create a new class object with default values
 //        System.out.println("family Car:");
 //        familyCar.printVariables();//call the class method
