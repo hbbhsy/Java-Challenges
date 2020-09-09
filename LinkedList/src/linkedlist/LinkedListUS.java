@@ -1,6 +1,8 @@
 package linkedlist;
 
-public class LinkedList {
+import java.util.LinkedList;
+
+public class LinkedListUS {
 
     // Properties
     Node head;
@@ -13,7 +15,7 @@ public class LinkedList {
 //        count = 0;
 //    }
 
-    public LinkedList(Node newHead) {
+    public LinkedListUS(Node newHead) {
         head = newHead;
         count = 1;
     }
@@ -58,17 +60,17 @@ public class LinkedList {
     public void remove() {
         Node current = head;
         while (current.getNext() != null) {
-            current = current.getNext();)
+            current = current.getNext();
         }
         current = current.getNext();
     }
 
     public static void main(String[] args) {
 
-        LinkedList<String> LinkedList = new LinkedList(<String>()){
-//            LinkedList
+        LinkedList<String> linkedList = new LinkedList();
+        linkedList.add("Alice");
+        System.out.println(linkedList);
 
-        }
     }
 
 
