@@ -21,11 +21,32 @@ public class Queuey {
         return queue.size();
     }
 
+    // Enqueueing an item (add an item)
     public void enqueue(int n) {
+        queue.addLast(n);
+    }
 
+    // Dequeue the first item
+    public int dequeue() {
+        return (int) queue.remove();// Casting the dequeued item to an int type
+    }
+
+    // Peek at the first item
+    public int peek() {
+        return (int) queue.get(0); // Get the first item and cast it to an int type
     }
 
     public static void main(String[] args) {
+        Queuey q = new Queuey();
+        q.enqueue(5);
+        q.enqueue(7);
+        q.enqueue(6);
+        System.out.println("First out: "+q.dequeue());
+        System.out.println("Peek at second item: " + q.peek());
+        System.out.println("Second out: " + q.dequeue());
+        System.out.println("Third out: " + q.dequeue());
+
+
 
     }
 }
