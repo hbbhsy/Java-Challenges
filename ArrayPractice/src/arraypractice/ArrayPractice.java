@@ -1,42 +1,41 @@
 package arraypractice;
 
 import java.util.Arrays;
+import java.lang.reflect.Array;
 
 public class ArrayPractice {
 
-    public static <E> void printArray(int[] array) {
+    public static <E> void printArray(E[] array) {
+        // E can be any types of elements
+        // E is automatically an object, need to be initialized using objects, not data types
         System.out.print("[");
-        for (int i=0; i<array.length; i++) {
-            E item = array[i];
-            System.out.print(item);
-            if (i<array.length - 1) {
-                System.out.print(", ");
-            }
+
+        for (E element : array) {
+            System.out.println(element + " ");
         }
-        System.out.println("]");
     }
 
-    public static void printArray(String[] array) {
-        System.out.print("[");
-        for (int i=0; i<array.length; i++) {
-            String item = array[i];
-            System.out.print(item);
-            if (i<array.length - 1) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println("]");
-    }
+//    public static void printArray(String[] array) {
+//        System.out.print("[");
+//        for (int i=0; i<array.length; i++) {
+//            String item = array[i];
+//            System.out.print(item);
+//            if (i<array.length - 1) {
+//                System.out.print(", ");
+//            }
+//        }
+//        System.out.println("]");
+//    }
 
     public static void main(String[] args) {
         // Java index start from 0
         // Declaring
-        int[] intArray1;
+        Integer[] intArray1; // instead of int, use Integer coz it's an object
         // Allocation
-        int[] intArray2 = new int[4]; // 4 is the size of the array
+        Integer[] intArray2 = new Integer[4]; // 4 is the size of the array
         printArray(intArray2);
         // Initializing
-        int[] intArray3 = {5, 2, 9, 1, 3}; // need to be all the same datatype
+        Integer[] intArray3 = {5, 2, 9, 1, 3}; // need to be all the same datatype
 
         String[] shoppingList = {"banana", "apple", "pear"};
 
