@@ -64,6 +64,12 @@ public class TicTacToe {
 
     //
     public boolean playTurn(int spot) {
+        /**
+         * This method is to de
+         * @Param int spot This is the spot the user wants to play, need to validate the spot
+         * @Return boolean This is whether is the user's turn to play
+         * */
+
 
     }
 }
