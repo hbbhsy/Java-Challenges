@@ -50,6 +50,11 @@ public class TicTacToe {
     }
 
     public static char[] setBoard() {
+        /**
+         * This method is to set the initial board.
+         * Each board spot on the board is represented by '-'.
+         * @Return char[] This return the empty board
+        */
         char[] board = new char[9];
         for (int i = 0; i < board.length; i++) {
             board[i] = '-';
