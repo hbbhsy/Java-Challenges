@@ -69,6 +69,12 @@ public class TicTacToe {
          * @Param int spot This is the spot the user wants to play, need to validate the spot
          * @Return boolean This is whether is the user's turn to play
          * */
+        boolean isValid = withinRange(spot) $$ ! isSpotTaken(spot);
+        if (isValid) {
+            board[spot - 1] = currentMarker;
+            currentMarker = (currentMarker == userMarker) ? aiMarker : userMarker;
+        }
+        return isValid;
 
 
     }
