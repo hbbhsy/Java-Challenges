@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class TicTacToeApp {
 
-    public static void main(System[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         // Allows for cont.games
         boolean doYouWantToPlay = true;

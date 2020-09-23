@@ -47,6 +47,7 @@ public class TicTacToe {
         this.aiMarker = aiMarker;
         this.winner = '-';
         this.board = setBoard();
+        this.currentMarker = userMarker;
     }
 
     public static char[] setBoard() {
@@ -118,9 +119,9 @@ public class TicTacToe {
     }
 
     public boolean isThereAWinner() {
-        boolean diagonalsAndMiddles = rightDi() || leftDi() || middleRow() || secondCol() && board[4] != '-';
-        boolean topAndFirst = topRow() || firstCol() && board[0] != '-';
-        boolean bottomAndThird = bottomRow() || thirdRow() && board[8] != '-';
+        boolean diagonalsAndMiddles = (rightDi() || leftDi() || middleRow() || secondCol()) && board[4] != '-';
+        boolean topAndFirst = (topRow() || firstCol()) && board[0] != '-';
+        boolean bottomAndThird = (bottomRow() || thirdRow()) && board[8] != '-';
         if (diagonalsAndMiddles) {
             this.winner = board[4];
         } else if (topAndFirst) {
