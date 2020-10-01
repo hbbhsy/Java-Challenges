@@ -22,7 +22,7 @@ public class Hangman {
 
     public Hangman() throws IOException {
         initializeStreams();
-        mysterWord = pickWord();
+        mysteryWord = pickWord();
         currentGuess = initializeCurrentGuess();
 
     }
@@ -58,13 +58,22 @@ public class Hangman {
                 current.append(" ");
             }
         }
+        return current;
+    }
+
+    public String getFormalCurrentGuess() {
+        return "Current Guess:" + currentGuess.toString();
+    }
+
+    public boolean gameOver() {
+        return true;
     }
 
     public String drawPicture() {
         switch(currentTry) {
             case 0: return noPersonDraw();
             case 1: return addHeadDraw();
-            case 2: return addBodayDraw();
+            case 2: return addBodyDraw();
             case 3: return addOneArmDraw();
             case 4: return addSecondArmDraw();
             case 5: return addFirstLegDraw();
@@ -72,19 +81,84 @@ public class Hangman {
         }
     }
 
-    public String noPersonDraw() {
-        return "";
+    private String noPersonDraw() {
+        return " - - - - -\n"+
+                "|        |\n"+
+                "|        \n" +
+                "|       \n"+
+                "|        \n" +
+                "|       \n" +
+                "|\n" +
+                "|\n";
     }
 
-    public String addHeadDraw() {
-        return "";
+    private String addHeadDraw() {
+        return " - - - - -\n"+
+                "|        |\n"+
+                "|        O\n" +
+                "|       \n"+
+                "|        \n" +
+                "|       \n" +
+                "|\n" +
+                "|\n";
     }
 
-    public String addBodyDraw() {
-        return "";
+    private String addBodyDraw() {
+        return " - - - - -\n"+
+                "|        |\n"+
+                "|        O\n" +
+                "|        | \n"+
+                "|        |\n" +
+                "|        \n" +
+                "|\n" +
+                "|\n";
     }
 
-    public String
+    private String addOneArmDraw() {
+        return   " - - - - -\n"+
+                "|        |\n"+
+                "|        O\n" +
+                "|      / |  \n"+
+                "|        |\n" +
+                "|        \n" +
+                "|\n" +
+                "|\n";
+    }
+
+    private String addSecondArmDraw() {
+        return  " - - - - -\n"+
+                "|        |\n"+
+                "|        O\n" +
+                "|      / | \\ \n"+
+                "|        |\n" +
+                "|        \n" +
+                "|\n" +
+                "|\n";
+    }
+
+    private String addFirstLegDraw() {
+        return   " - - - - -\n"+
+                "|        |\n"+
+                "|        O\n" +
+                "|      / | \\ \n"+
+                "|        |\n" +
+                "|       / \n" +
+                "|\n" +
+                "|\n";
+    }
+
+    private String fullPersonDraw() {
+        return   " - - - - -\n"+
+                "|        |\n"+
+                "|        O\n" +
+                "|      / | \\ \n"+
+                "|        |\n" +
+                "|       / \\ \n" +
+                "|\n" +
+                "|\n";
+    }
+
+
 
 
 }
