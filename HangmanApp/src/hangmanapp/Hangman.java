@@ -35,6 +35,7 @@ public class Hangman {
             String currentLine = bufferedFileReader.readLine();
             while (currentLine != null) {
                 dictionary.add(currentLine);
+                currentLine = bufferedFileReader.readLine();
             }
             bufferedFileReader.close();
             fileReader.close();
@@ -66,7 +67,52 @@ public class Hangman {
     }
 
     public boolean gameOver() {
-        return true;
+        if (didWeWin()) {
+            System.out.println();
+            System.out.println("You Won!");
+            return true;
+        } else if (didWeLose()) {
+            System.out.println();
+            System.out.println("You Lose!");
+            return true;
+        }
+        return false;
+    }
+
+    public boolean didWeWin() {
+        String guess = getCondensedCurrentGuess();
+        return guess.equals(mysteryWord);
+    }
+
+    public boolean didWeLose() {
+        return currentTry >= maxTries;
+    }
+
+    public String getCondensedCurrentGuess() {
+        String guess = currentGuess.toString();
+        return guess.replace(" " ,"");
+    }
+
+
+    public boolean isGuessedAlready(char guess) {
+        return previousGuesses.contains(guess);
+    }
+
+    public boolean playGuess(char guess) {
+        boolean isItAGoodGuess = false;
+        for (int i = 0; i < mysteryWord.length(); i++) {
+            if (mysteryWord.charAt(i) == guess) {
+                currentGuess.setCharAt(i * 2, guess);
+                isItAGoodGuess = true;
+                previousGuesses.add(guess);
+            }
+        }
+
+        if (isItAGoodGuess) {
+            currentTry++;
+        }
+
+        return isItAGoodGuess;
     }
 
     public String drawPicture() {

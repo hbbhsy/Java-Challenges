@@ -24,6 +24,26 @@ public class HangmanApp {
                 System.out.println();
                 System.out.println(game.getFormalCurrentGuess());
                 System.out.println(game.mysteryWord);
+                System.out.println();
+
+                // Get the guess
+                System.out.println("Enter a character:");
+                char guess = (sc.next().toLowerCase()).charAt(0);
+                System.out.println();
+
+                // Check if the character is guessed already
+                while (game.isGuessedAlready(guess)) {
+                    System.out.println("Try again");
+                    guess = (sc.next().toLowerCase()).charAt(0);
+                }
+
+                // Play the game
+                if (game.playGuess(guess)) {
+                    System.out.println("Great guess!");
+                } else {
+                    System.out.println("Wrong guess.");
+                }
+
             }
             while (!game.gameOver());
 
