@@ -100,11 +100,12 @@ public class Hangman {
 
     public boolean playGuess(char guess) {
         boolean isItAGoodGuess = false;
+        previousGuesses.add(guess);
         for (int i = 0; i < mysteryWord.length(); i++) {
             if (mysteryWord.charAt(i) == guess) {
                 currentGuess.setCharAt(i * 2, guess);
                 isItAGoodGuess = true;
-                previousGuesses.add(guess);
+
             }
         }
 
