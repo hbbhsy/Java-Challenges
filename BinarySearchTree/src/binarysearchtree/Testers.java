@@ -16,7 +16,16 @@ public class Testers  {
             }
         }
 
-    public static void checkAddMemberCardinality(Tree t) throws Exception {
+    public static void checkAddMemberCardinality(Tree t, int x) throws Exception {
+        int nT = (t.add(x)).cardinality();
+        if (nT == (t.cardinality() + 1)) {
+            if (t.member(x)) {
+                throw new Exception("The cardinality increased by 1., but the thing"
+                                    + " that was added was already a member of the tree.");
+            }
+        } else if (nT == t.cardinality()) {
+            throw new Exception("Something is wrong with our program.");
+        }
 
     }
 
