@@ -8,12 +8,16 @@ public class Testers  {
         if (t instanceof EmptyBST) {
             if (!t.isEmpty()) {
                 throw new Exception("All is not good, the tree is an EmptyBST and it's not empty");
-            } else if (t instanceof NonEmptyBST) {
+            }
+        } else if (t instanceof NonEmptyBST) {
                 if (!t.isEmpty()) {
                     throw new Exception("All is not good, the tree is an NonEmptyBST and it's empty.");
                 }
             }
         }
+
+    public static void checkAddMemberCardinality(Tree t) throws Exception {
+
     }
 
 }
