@@ -22,6 +22,5 @@ public class User {
         Set a = new HashSet();
         a.add(1212);
         User kathryn = new User("Agnes", "password", 10, a);
-
     }
 }
