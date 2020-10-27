@@ -48,7 +48,6 @@ public class Testers  {
         } else {
             System.out.println("Good.");
         }
-
     }
 
 }
